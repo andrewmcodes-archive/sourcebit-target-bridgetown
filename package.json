@@ -1,0 +1,48 @@
+{
+  "name": "sourcebit-target-bridgetown",
+  "version": "0.0.1",
+  "description": "A Sourcebit plugin for Bridgetown",
+  "keywords": [
+    "headless",
+    "headless-cms",
+    "jamstack",
+    "ssg",
+    "bridgetown"
+  ],
+  "homepage": "https://github.com/andrewmcodes/sourcebit-target-bridgetown#readme",
+  "bugs": {
+    "url": "https://github.com/andrewmcodes/sourcebit-target-bridgetown/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmcodes/sourcebit-target-bridgetown.git"
+  },
+  "license": "MIT",
+  "author": "Andrew Mason <andrewmcodes@protonmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "prettier:check": "prettier --check \"./**/*.{js,json,md,html}\"",
+    "prettier:format": "prettier --write \"./**/*.{js,json,md,html}\"",
+    "test": "yarn prettier:check"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md,html}": [
+      "yarn prettier:format",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@sindresorhus/slugify": "^0.9.1",
+    "inquirer-table-prompt": "^0.2.1"
+  },
+  "devDependencies": {
+    "husky": "^4.2.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
+  }
+}
